@@ -2,15 +2,17 @@
 #include <stdio.h>
 #include <string.h>
 
-void parse_execute(char *input){
+void parse_execute(char* input){
   char *token = strtok(input, " ,");
 
-  for(int i = 0; i < sizeof(*token); i++){
-    printf("%s\n", token);
-    token = strtok(NULL," ,");
-    if(strcmp(token, "quit") == 1){
-      break;
+  while (token != NULL) {
+    if(strcmp(token, "look") == 0) {
+      printf("It is to dark to see\n");
+      return;
+    }else if(strcmp(token,"item") == 0){
+      printf("You have %d itens, type 'check' to see your itens.\n", 5);
+      return;
     }
-  }
-        
+    token = strtok(NULL, " ,");
+  }        
 }

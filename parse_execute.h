@@ -1,1 +1,1 @@
-extern void parse_execute(char *input);
+extern void parse_execute(char* input);
