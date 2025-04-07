@@ -16,9 +16,10 @@ int main(){
   printf("Welcome to the cave adventure!\n");
   printf("It is very dark in here.\n");
   if(get_input()){
-    Player main = set_player_and_world();
+    Player main_player = set_player();
+    World world = set_world();
     input_buffer[strcspn(input_buffer, "\n")] = 0; // strcspn(): removes the \n
-    parse_execute(input_buffer);
+    game_logic(input_buffer, &main_player, &world);
   }
   printf("Bye!\n");
   return 0;

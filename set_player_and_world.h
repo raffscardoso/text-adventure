@@ -8,6 +8,13 @@ typedef struct Player {
 
 } Player;
 
-Player set_player_and_world();
+typedef struct World {
+  char *current_location;
+  char *location_description;
+} World;
+
+Player set_player();
+
+World set_world();
 
 #endif // !SET_PLAYER_AND_WORLD

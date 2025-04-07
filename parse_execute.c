@@ -1,9 +1,11 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include "parse_execute.h"
+#include "set_player_and_world.h"
 
-void parse_execute(char* input){
-  char *verb= strtok(input, " "); // tokenize the input
+void game_logic(char* input, Player *player, World *world){
+  char *verb= strtok(input, " "); 
   char *noun = strtok(NULL, " ");                                   
 
   if(verb == NULL){
@@ -13,7 +15,7 @@ void parse_execute(char* input){
   
   while (verb != NULL) {
     if(strcmp(verb, "look") == 0 && noun == NULL) {
-      printf("It is to dark to see\n");
+      printf("It is to dark to see.\n");
       return;
     }else if(strcmp(verb,"go") == 0 && noun != NULL){
       printf("You go %s\n", noun);
