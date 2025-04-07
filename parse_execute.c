@@ -3,16 +3,22 @@
 #include <string.h>
 
 void parse_execute(char* input){
-  char *token = strtok(input, " ,");
+  char *verb= strtok(input, " "); // tokenize the input
+  char *noun = strtok(NULL, " ");                                   
 
-  while (token != NULL) {
-    if(strcmp(token, "look") == 0) {
+  if(verb == NULL){
+    printf("I didn't uderstand that.\n");
+    return;
+  }
+  
+  while (verb != NULL) {
+    if(strcmp(verb, "look") == 0 && noun == NULL) {
       printf("It is to dark to see\n");
       return;
-    }else if(strcmp(token,"item") == 0){
-      printf("You have %d itens, type 'check' to see your itens.\n", 5);
+    }else if(strcmp(verb,"go") == 0 && noun != NULL){
+      printf("You go %s\n", noun);
       return;
-    }
-    token = strtok(NULL, " ,");
+    }else printf("I didn't uderstand that.\n");
+    verb = strtok(NULL, " ");
   }        
 }
