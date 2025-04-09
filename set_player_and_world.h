@@ -2,9 +2,7 @@
 #define SET_PLAYER_AND_WORLD
 
 typedef struct Player {
-  char *item1;
-  char *item2;
-  char *item3;
+  char *itens[5];
 
 } Player;
 

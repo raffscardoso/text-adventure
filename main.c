@@ -12,6 +12,7 @@ static bool get_input(void){
   printf("\n -->");
   return fgets(input_buffer, sizeof(input_buffer), stdin) != NULL;
 }
+
 int main(){
   printf("Welcome to the cave adventure!\n");
   printf("It is very dark in here.\n");
